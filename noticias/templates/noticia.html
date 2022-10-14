@@ -1,0 +1,20 @@
+<h1> <h1 style="color: blueviolet;">
+
+    <center> NOTICIA </center>
+    </h1>
+    
+    {% extends 'base.html' %}
+    
+    {% block content %}
+    <a href="{% url 'noticia_nueva' %}">  <button type="button" class="btn btn-info">NoticiaNueva</button>    </a >
+    <br>
+    {% for noticia in Todas_noticias %}
+    
+    <a href="{% url 'noticia_detalle' noticia.pk %}" >{{noticia}}  </a>
+    <p>{{Noticias.Titulo}}</p>
+
+
+    {% endfor %}
+    
+    
+    {% endblock content %}

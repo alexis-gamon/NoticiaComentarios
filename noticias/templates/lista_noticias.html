@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+<a href="{% url 'noticia_nueva' %}">  <button type="button" class="btn btn-info">NoticiaNueva</button>    </a >
+    
+{% for noticia in lista_noticias %}
+<!--
+<div class="card" style="width: 30rem;">
+  
+    <div class="card-body">
+      <h5 class="card-title">{{ noticia.Titulo}}</h5>
+      <p class="card-text">{{ noticia.Descripcion}}</p>
+      <a href="#" class="btn btn-primary">Leer</a>
+    </div>
+  </div>
+  -->
+   
+  <div class="card" style="width: 18rem;">
+    
+    <div class="card-body">
+      
+      <h2 class="card-title">{{ noticia.Titulo}}</h2>
+      <p class="card-text">{{ noticia.Descripcion}}</p>
+      <p class="card-text"><small class="text-muted"> autor:{{ noticia.autor}}</small></p>
+     </div>
+    <ul class="list-group list-group-flush">
+     
+     
+     
+      {% for comentario in noticia.comentarios.all %}
+     
+      <li class="list-group-item"> {{comentario.autor}} escribio: {{comentario}}</li>
+
+     {% endfor %}
+    </ul>
+    <div class="card-body">
+      <a href="{% url 'noticia_detalle' noticia.pk %}"> <button type="button" class="btn btn-info">Detalle</button>    </a>
+    
+    </div>
+  </div>
+
+  
+  
+
+  {% endfor %}
+{% endblock %}
+
