@@ -5,7 +5,10 @@
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
 
     
-    <a href="{% url 'home' %}"> <button type="button" class="btn btn-info">Home</button>   </a><a href="{% url 'lista_noticias' %}"> <button type="button" class="btn btn-info">Noticias</button> </a>  <a href="{% url 'login' %}"> <button type="button" class="btn btn-primary">Login</button>  </a>
+    <a href="{% url 'home' %}"> <button type="button" class="btn btn-info">Home</button>  
+    </a><a href="{% url 'lista_noticias' %}"> <button type="button" class="btn btn-info">Noticias</button> </a>  
+    <a href="{% url 'login' %}"> <button type="button" class="btn btn-primary">Login</button>  </a>
+
 </header>
 
 {% if user.is_authenticated %}
